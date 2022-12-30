@@ -1,0 +1,13 @@
+html,
+body {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    height: 50vh;
+    aspect-ratio: 2 / 3;
+    border: 1px solid black;
+}
