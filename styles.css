@@ -12,13 +12,13 @@ body {
     max-width: 90vw;
     background-color: black;
     aspect-ratio: 4 / 7;
-    padding: 5%;
+    padding: 3%;
 }
 
 .display{
-    height: 20%;
+    height: 24%;
     background-color: gray;
-    margin-bottom: 5%;
+    margin-bottom: 8%;
 }
 
 .grid-container{
