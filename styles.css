@@ -1,13 +1,48 @@
 html,
 body {
+    background-color:orange;
+    height: 100vh;
     display: flex;
-    height: 100%;
     align-items: center;
     justify-content: center;
 }
 
-.container{
-    height: 50vh;
-    aspect-ratio: 2 / 3;
-    border: 1px solid black;
+.calculator{
+    height: 50%;
+    max-width: 90vw;
+    background-color: black;
+    aspect-ratio: 4 / 7;
+    padding: 5%;
+}
+
+.display{
+    height: 20%;
+    background-color: gray;
+    margin-bottom: 5%;
+}
+
+.grid-container{
+    aspect-ratio: 4 / 5;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 2%;
+}
+
+.grid-item{
+    background-color: gray;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a{
+    font-size: large;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.grid-item.equal{
+    grid-column: 3 / 5;
 }
