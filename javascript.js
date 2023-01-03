@@ -1,34 +1,60 @@
 // Calculation Fnctions
-const add = function(addendOne, addendTwo) {
-	return addendOne + addendTwo;
-};
-
-const subtract = function(minuend, subtratend) {
-	return minuend - subtratend;
-};
-
-const multiply = function(multiplier, multiplicand) {
-  return multiplicand * multiplier;
-};
-
-const divide = function(numerator, denominator) {
-  return numerator / denominator;
-};
-
-let currenVal, operator, prevVal;
-
 function operate(num1, operator, num2){
     switch(operator){
         case '+':
-            return add(num1, num2);
+            return num1 + num2;
         case "-":
-            return subtract(num1, num2);
+            return num1 - num2;
         case "*":
-            return multiply(num1, num2);
+            return num1 * num2;
         case "/":
-            return divide(num1, num2);
+            return num1 / num2;
     }
 }
 
+// Get User Input
+const keys = document.querySelectorAll('.grid-item');
+let argumentsRow = document.querySelector('.arguments');
+let resultRow = document.querySelector('.results');
+let inputs, result = "";
+
+function updateDisplay (e){
+
+    currentKey = e.target.textContent;
+
+    if(currentKey === "AC"){
+        inputs = "";
+        result = "";
+        console.log(inputs);
+        return;
+    }
+    if(currentKey === "C"){
+        inputs = "";
+        argumentsRow.innerHTML = inputs;
+        console.log(inputs);
+        return;
+    }
+    
+    if(inputs === undefined || inputs === "" ){
+        "%/x=".includes(currentKey) ? inputs : inputs = currentKey;
+        console.log(inputs);
+        return
+    }
+
+    if(inputs.slice(-1) === currentKey && "+-%/x=".includes(currentKey)){
+        console.log('here');
+        console.log(inputs);
+        return
+    }
+    
+    inputs = [inputs + currentKey].join('');
+    argumentsRow.innerHTML = inputs;
+    console.log(inputs);
+}
+
+keys.forEach(key =>{
+    key.addEventListener('click', (e) => updateDisplay(e));
+});
+
 // Main Functions
-console.log(operate(1, '-', 3));
+// console.log(operate(1, '-', 3));
